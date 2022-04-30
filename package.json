@@ -1,0 +1,25 @@
+{
+    "name": "processo-seletivo-electron",
+    "version": "1.0.0",
+    "description": "Teste Consulta Via CEP",
+    "main": "main.js",
+
+    "scripts": {
+        "start": "electron .",
+        "dev": "electron ."
+    },
+    "keywords": [
+        "Electron",
+        "CEP",
+        "Html",
+        "Css",
+        "Javascript"
+    ],
+    "devDependencies": {
+        "electron": "^18.1.0"
+    },
+    "dependencies": {
+        "jsonfile-promised": "^0.0.1"
+    }
+    
+}
