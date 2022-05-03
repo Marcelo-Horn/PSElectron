@@ -7,7 +7,7 @@ cepInput.addEventListener('focusout', function () {
     console.log(cep);
     
     if (cep?.length !==8) {
-        console.log("CEP inválido!");
+        alert("CEP inválido!");
         return;
     }
     
@@ -16,6 +16,10 @@ cepInput.addEventListener('focusout', function () {
     fetch(`https://viacep.com.br/ws/${cep}/json`)
     .then((response) => response.json())
         .then((data) => {
+            if(data.erro == "true") {
+                alert("CEP inválido!");
+                return;
+            }
             document.querySelector('input[name="pplace"]').value = data.logradouro;
             document.querySelector('input[name="district"]').value = data.bairro;
             document.querySelector('input[name="city"]').value = data.localidade;

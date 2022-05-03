@@ -7,7 +7,11 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
       preload: path.join(__dirname, 'preload.js')
     }
   })
@@ -43,13 +47,15 @@ app.on('window-all-closed', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
+
 //ipcMain.on('go-to-registers', () => {
 //  const mainWindow = new BrowserWindow({
 //    width: 800,
 //    height: 600,
 //    webPreferences: {
-//      preload: path.join(__dirname, 'preload.js')
+//      preload: path.join(__dirname, 'preload.js'),
+//      nodeIntegration: true
 //    }
 //  })
-//  mainWindow.loadFile("http://www.google.com");
+//  mainWindow.loadURL("https://www.google.com.br/");
 //})
